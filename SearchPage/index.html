@@ -87,31 +87,10 @@ a:visited {
   <a href="https://2707164.github.io/index.html">Home</a>
   <a href="https://torbscoolz.github.io/SearchPage/index.html">Search Page</a>
   <a href="https://torbscoolz.github.io/about/index.html">About</a>
-  <a href="" id="digital" align="right"></a>
   <a href="javascript:void(0);" class="icon" onclick="myTopnav()">
     <i class="fa fa-bars"></i>
   </a>
 </div>
-<script>
-        function addZero(i) {
-          if (i < 10) {
-            i = "0" + i;
-          }
-          return i;
-        }
-
-        function updateClock() {
-          var d = new Date();
-          var x = document.getElementById("digital");
-          var h = addZero(d.getHours());
-          var m = addZero(d.getMinutes());
-          var s = addZero(d.getSeconds());
-          x.innerHTML = h + ":" + m + ":" + s;
-          setTimeout(updateClock, 1000);
-        }
-        updateClock();
-      </script>
-
 <!-- I'm just keeping this near the div for the top bar -->
 <script>
 function myTopnav() {
@@ -130,7 +109,7 @@ function myTopnav() {
 <div align="center">
     <body bgcolor="#FFFFFF">
         <form id="search-form" method="get" action="https://www.google.com/search">
-        <img src="https://web.archive.org/web/19981111183552id_/http://google.stanford.edu/google.jpg" width="351" height="113" alt="Google!">
+        <span id="time" style="font-size:100px; font-family: 'Times';"></span>        
         <br>
         <table border="0" cellspacing="0" cellpadding="5" width="70%">
         <tbody>
@@ -245,6 +224,42 @@ function searchFunction() {
         </table>
     </body>
 </div>
-    
+<script>
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+
+            for (var i = 0; i < 6; i++)
+                color += letters[Math.floor(Math.random() * 16)];
+
+            return color;
+        }
+
+        function getTime(str) {
+            if(str == "h")
+                var i = new Date().getHours();
+            else if(str == "m")
+                var i = new Date().getMinutes();
+            else if(str == "s")
+                var i = new Date().getSeconds();
+
+            return (i < 10) ? "0" + i : i;
+        }
+
+       setInterval(function () {
+
+            var time = getTime("h") + " : " + getTime("m") + " : " + getTime("s");
+
+            document.getElementById("time").innerHTML = "";
+
+            for(var lcv = 0; lcv < time.length; lcv++)
+                document.getElementById("time").innerHTML += "<span style='color:" + getRandomColor() + "'>" + time.charAt(lcv) + "</span>";
+
+            new Audio("http://www.soundjay.com/button/beep-04.mp3").play();
+
+        }, 1000);
+
+    </script>
 </body>
 </html>
