@@ -1,4 +1,6 @@
+
 <!DOCTYPE html>
+<!--Last Updated Friday, August 27th, 2021-- 14:20:26-->
 <html>
 <head>
     <link rel="shortcut icon" type="image/jpg" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Google_favicon.png/468px-Google_favicon.png"/>
@@ -88,29 +90,14 @@ a:visited {
   <a href="https://2707164.github.io/SearchPage/index.html" class="active">Search Page</a>
   <a href="https://2707164.githib.io/Resume/index.html">Resume</a>
   <a href="https://2707164.github.io/about/index.html">About</a>
-  <a href="javascript:void(0);" class="icon" onclick="myTopnav()">
-    <i class="fa fa-bars"></i>
-  </a>
 </div>
-<!-- I'm just keeping this near the div for the top bar -->
-<script>
-function myTopnav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-</script>
-
 <br>    
 <br>
     
 <div align="center">
     <body bgcolor="#FFFFFF">
         <form id="search-form" method="get" action="https://www.google.com/search">
-        <span id="time" style="font-size:100px; font-family: 'Times';"></span>        
+        <img src="https://web.archive.org/web/19981111183552id_/http://google.stanford.edu/google.jpg" alt="Google!">       
         <br><br>
         <table border="0" cellspacing="0" cellpadding="5" width="70%">
         <tbody>
@@ -208,59 +195,5 @@ function searchFunction() {
     
 <br>
 <br>
-
-<div>    
-    <body bgcolor="#FFFFFF">
-        <table border="0" cellspacing="0" width="14%" align="right">
-            <tbody>
-                <tr>
-                    <td align="left">
-                        <p>This website supports:</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="right">
-                        <img src="https://web.archive.org/web/20090821182450/http://geocities.com/SiliconValley/Cable/1415/graphics/netscape.gif">
-                        <img src="https://web.archive.org/web/20091027084756/http://www.geocities.com/SiliconValley/Cable/1415/graphics/iexplorer.gif">
-                    </td>
-                </tr>
-                <tr>
-                    <br>
-                </tr>
-            </tbody>
-        </table>
-    </body>
-</div>
-<script>
-
-        function getRandomColor() {
-            var letters = '0123456789ABCDEF';
-        }
-
-        function getTime(str) {
-            if(str == "h")
-                var i = new Date().getHours();
-            else if(str == "m")
-                var i = new Date().getMinutes();
-            else if(str == "s")
-                var i = new Date().getSeconds();
-
-            return (i < 10) ? "0" + i : i;
-        }
-
-       setInterval(function () {
-
-            var time = getTime("h") + ":" + getTime("m") + ":" + getTime("s");
-
-            document.getElementById("time").innerHTML = "";
-
-            for(var lcv = 0; lcv < time.length; lcv++)
-                document.getElementById("time").innerHTML += "<span style='color:" + getRandomColor() + "'>" + time.charAt(lcv) + "</span>";
-
-            new Audio("http://www.soundjay.com/button/beep-04.mp3").play();
-
-        }, 1000);
-
-    </script>
 </body>
 </html>
